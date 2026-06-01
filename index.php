@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+
+
+const a=12；
+
 const DATA_FILE = __DIR__ . '/data/tasks.json';
 const DB_FILE = __DIR__ . '/data/tasks.sqlite';
 const LOG_FILE = __DIR__ . '/logs/app.log';
