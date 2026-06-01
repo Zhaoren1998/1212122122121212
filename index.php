@@ -85,9 +85,12 @@ const SETTING_KEY_DEFAULT_SORT_ORDER = 'default_sort_order';
 const SETTING_KEY_DEFAULT_PAGE_SIZE = 'default_page_size';
 const SETTING_KEY_DEFAULT_PRIORITY = 'default_priority';
 const SETTING_KEY_REMINDER_LEAD_TIME = 'reminder_lead_time';
+const SETTING_KEY_DEFAULT_FILTER_STATUS = 'default_filter_status';
 const DEFAULT_REMINDER_LEAD_TIME = 30;
 const MIN_REMINDER_LEAD_TIME = 0;
 const MAX_REMINDER_LEAD_TIME = 1440;
+const DEFAULT_FILTER_STATUS = '全部';
+const ALLOWED_FILTER_STATUSES = ['全部', '未开始', '进行中', '已完成', '已归档'];
 
 date_default_timezone_set('Asia/Shanghai');
 
@@ -2067,6 +2070,20 @@ function validateSettingReminderLeadTime(int $value): bool
     return $value >= MIN_REMINDER_LEAD_TIME && $value <= MAX_REMINDER_LEAD_TIME;
 }
 
+function validateSettingFilterStatus(string $value): bool
+{
+    return in_array($value, ALLOWED_FILTER_STATUSES, true);
+}
+
+/**
+ * 将「默认筛选」设置值转换为列表查询使用的状态过滤值。
+ * 「全部」表示不过滤，返回空字符串；其余返回具体状态。
+ */
+function resolveFilterStatusForQuery(string $filterStatus): string
+{
+    return $filterStatus === DEFAULT_FILTER_STATUS ? '' : $filterStatus;
+}
+
 function validateUserSettingsInput(array $input): array
 {
     $errors = [];
@@ -2132,6 +2149,18 @@ function validateUserSettingsInput(array $input): array
         $sanitized['reminder_lead_time'] = (string) DEFAULT_REMINDER_LEAD_TIME;
     }
 
+    if (isset($input['default_filter_status'])) {
+        $filterStatus = is_string($input['default_filter_status']) ? trim($input['default_filter_status']) : '';
+        if ($filterStatus === '' || !validateSettingFilterStatus($filterStatus)) {
+            $errors['default_filter_status'] = '非法默认筛选状态，已使用默认值 ' . DEFAULT_FILTER_STATUS . '。';
+            $sanitized['default_filter_status'] = DEFAULT_FILTER_STATUS;
+        } else {
+            $sanitized['default_filter_status'] = $filterStatus;
+        }
+    } else {
+        $sanitized['default_filter_status'] = DEFAULT_FILTER_STATUS;
+    }
+
     return [
         'errors' => $errors,
         'sanitized' => $sanitized,
@@ -2144,6 +2173,112 @@ function saveUserSettings(PDO $pdo, array $settings): bool
         upsertSystemSetting($pdo, $key, $value);
     }
     return true;
+}
+
+/**
+ * 读取持久化的用户设置并解析为生效值。
+ * 对每一项进行合法性校验，非法或缺失时回退到安全默认值，
+ * 并为「设置读取」「默认值回退」关键操作输出详细调试日志。
+ */
+function resolveEffectiveUserSettings(PDO $pdo): array
+{
+    $stored = getAllUserSettings($pdo);
+    $fallbacks = [];
+
+    // 默认排序字段
+    $rawSortField = isset($stored[SETTING_KEY_DEFAULT_SORT_FIELD]) ? (string) $stored[SETTING_KEY_DEFAULT_SORT_FIELD] : null;
+    if ($rawSortField !== null && validateSettingSortField($rawSortField)) {
+        $sortField = $rawSortField;
+    } else {
+        $sortField = DEFAULT_SORT_FIELD;
+        if ($rawSortField !== null) {
+            $fallbacks[SETTING_KEY_DEFAULT_SORT_FIELD] = ['stored' => $rawSortField, 'fallback' => $sortField];
+        }
+    }
+
+    // 默认排序方向
+    $rawSortOrder = isset($stored[SETTING_KEY_DEFAULT_SORT_ORDER]) ? (string) $stored[SETTING_KEY_DEFAULT_SORT_ORDER] : null;
+    if ($rawSortOrder !== null && validateSettingSortOrder($rawSortOrder)) {
+        $sortOrder = $rawSortOrder;
+    } else {
+        $sortOrder = DEFAULT_SORT_ORDER;
+        if ($rawSortOrder !== null) {
+            $fallbacks[SETTING_KEY_DEFAULT_SORT_ORDER] = ['stored' => $rawSortOrder, 'fallback' => $sortOrder];
+        }
+    }
+
+    // 每页数量
+    $rawPageSize = isset($stored[SETTING_KEY_DEFAULT_PAGE_SIZE]) ? (string) $stored[SETTING_KEY_DEFAULT_PAGE_SIZE] : null;
+    if ($rawPageSize !== null && is_numeric($rawPageSize) && validateSettingPageSize((int) $rawPageSize)) {
+        $pageSize = (int) $rawPageSize;
+    } else {
+        $pageSize = DEFAULT_PAGE_SIZE;
+        if ($rawPageSize !== null) {
+            $fallbacks[SETTING_KEY_DEFAULT_PAGE_SIZE] = ['stored' => $rawPageSize, 'fallback' => (string) $pageSize];
+        }
+    }
+
+    // 默认优先级
+    $rawPriority = isset($stored[SETTING_KEY_DEFAULT_PRIORITY]) ? (string) $stored[SETTING_KEY_DEFAULT_PRIORITY] : null;
+    if ($rawPriority !== null && validateSettingPriority($rawPriority)) {
+        $priority = $rawPriority;
+    } else {
+        $priority = DEFAULT_TASK_PRIORITY;
+        if ($rawPriority !== null) {
+            $fallbacks[SETTING_KEY_DEFAULT_PRIORITY] = ['stored' => $rawPriority, 'fallback' => $priority];
+        }
+    }
+
+    // 提醒提前时间（分钟）
+    $rawLeadTime = isset($stored[SETTING_KEY_REMINDER_LEAD_TIME]) ? (string) $stored[SETTING_KEY_REMINDER_LEAD_TIME] : null;
+    if ($rawLeadTime !== null && is_numeric($rawLeadTime) && validateSettingReminderLeadTime((int) $rawLeadTime)) {
+        $leadTime = (int) $rawLeadTime;
+    } else {
+        $leadTime = DEFAULT_REMINDER_LEAD_TIME;
+        if ($rawLeadTime !== null) {
+            $fallbacks[SETTING_KEY_REMINDER_LEAD_TIME] = ['stored' => $rawLeadTime, 'fallback' => (string) $leadTime];
+        }
+    }
+
+    // 默认筛选状态
+    $rawFilterStatus = isset($stored[SETTING_KEY_DEFAULT_FILTER_STATUS]) ? (string) $stored[SETTING_KEY_DEFAULT_FILTER_STATUS] : null;
+    if ($rawFilterStatus !== null && validateSettingFilterStatus($rawFilterStatus)) {
+        $filterStatus = $rawFilterStatus;
+    } else {
+        $filterStatus = DEFAULT_FILTER_STATUS;
+        if ($rawFilterStatus !== null) {
+            $fallbacks[SETTING_KEY_DEFAULT_FILTER_STATUS] = ['stored' => $rawFilterStatus, 'fallback' => $filterStatus];
+        }
+    }
+
+    $effective = [
+        SETTING_KEY_DEFAULT_SORT_FIELD => $sortField,
+        SETTING_KEY_DEFAULT_SORT_ORDER => $sortOrder,
+        SETTING_KEY_DEFAULT_PAGE_SIZE => $pageSize,
+        SETTING_KEY_DEFAULT_PRIORITY => $priority,
+        SETTING_KEY_REMINDER_LEAD_TIME => $leadTime,
+        SETTING_KEY_DEFAULT_FILTER_STATUS => $filterStatus,
+    ];
+
+    if ($fallbacks !== []) {
+        writeDebugLog('settings_default_fallback', [
+            'fallback_keys' => array_keys($fallbacks),
+            'fallback_detail' => $fallbacks,
+        ], 'fallback', [
+            'reason' => 'stored_value_invalid_or_corrupted',
+            'effective_settings' => $effective,
+        ]);
+    }
+
+    writeDebugLog('settings_read', [
+        'stored_keys' => array_keys($stored),
+        'effective_settings' => $effective,
+    ], 'success', [
+        'fallback_applied' => $fallbacks !== [],
+        'fallback_count' => count($fallbacks),
+    ]);
+
+    return $effective;
 }
 
 function migrateLegacyTasksJson(PDO $pdo): void
@@ -8793,11 +8928,12 @@ $categories = loadCategories();
 $tags = loadTags();
 $pdo = getDatabaseConnection();
 $userSettings = getAllUserSettings($pdo);
-$effectiveSortField = isset($userSettings[SETTING_KEY_DEFAULT_SORT_FIELD]) ? $userSettings[SETTING_KEY_DEFAULT_SORT_FIELD] : DEFAULT_SORT_FIELD;
-$effectiveSortOrder = isset($userSettings[SETTING_KEY_DEFAULT_SORT_ORDER]) ? $userSettings[SETTING_KEY_DEFAULT_SORT_ORDER] : DEFAULT_SORT_ORDER;
-$effectivePageSize = isset($userSettings[SETTING_KEY_DEFAULT_PAGE_SIZE]) && is_numeric($userSettings[SETTING_KEY_DEFAULT_PAGE_SIZE]) ? (int) $userSettings[SETTING_KEY_DEFAULT_PAGE_SIZE] : DEFAULT_PAGE_SIZE;
-$effectivePriority = isset($userSettings[SETTING_KEY_DEFAULT_PRIORITY]) ? $userSettings[SETTING_KEY_DEFAULT_PRIORITY] : DEFAULT_TASK_PRIORITY;
-$effectiveReminderLeadTime = isset($userSettings[SETTING_KEY_REMINDER_LEAD_TIME]) && is_numeric($userSettings[SETTING_KEY_REMINDER_LEAD_TIME]) ? (int) $userSettings[SETTING_KEY_REMINDER_LEAD_TIME] : DEFAULT_REMINDER_LEAD_TIME;
+$effectiveUserSettings = resolveEffectiveUserSettings($pdo);
+$effectiveSortField = $effectiveUserSettings[SETTING_KEY_DEFAULT_SORT_FIELD];
+$effectiveSortOrder = $effectiveUserSettings[SETTING_KEY_DEFAULT_SORT_ORDER];
+$effectivePageSize = (int) $effectiveUserSettings[SETTING_KEY_DEFAULT_PAGE_SIZE];
+$effectivePriority = $effectiveUserSettings[SETTING_KEY_DEFAULT_PRIORITY];
+$effectiveReminderLeadTime = (int) $effectiveUserSettings[SETTING_KEY_REMINDER_LEAD_TIME];
 $settingsErrorMessage = '';
 $settingsFormValues = [];
 $settingsSavedMessage = isset($_GET['settings_saved']) ? '设置已保存。' : '';
