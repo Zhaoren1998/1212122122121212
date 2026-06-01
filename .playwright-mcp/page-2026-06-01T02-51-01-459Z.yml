@@ -1,0 +1,287 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "待办任务管理" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 按优先级和创建时间展示任务标题、内容摘要、状态、截止时间、更新时间和操作入口。
+    - generic [ref=e7]: 当前任务：3 条
+  - region "任务状态统计" [ref=e8]:
+    - article [ref=e9]:
+      - paragraph [ref=e10]: 未开始
+      - paragraph [ref=e11]: "0"
+    - article [ref=e12]:
+      - paragraph [ref=e13]: 进行中
+      - paragraph [ref=e14]: "1"
+    - article [ref=e15]:
+      - paragraph [ref=e16]: 已完成
+      - paragraph [ref=e17]: "1"
+    - article [ref=e18]:
+      - paragraph [ref=e19]: 已归档
+      - paragraph [ref=e20]: "1"
+  - region "新增任务" [ref=e21]:
+    - heading "新增任务" [level=2] [ref=e22]
+    - status [ref=e23]: 批量完成成功，已处理 1 条任务。
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: 任务标题
+          - textbox "任务标题" [ref=e28]
+          - generic [ref=e29]: 最多 80 个字符。
+        - generic [ref=e30]:
+          - generic [ref=e31]: 初始状态
+          - combobox "初始状态" [ref=e32]:
+            - option "未开始" [selected]
+            - option "进行中"
+            - option "已完成"
+            - option "已归档"
+          - generic [ref=e33]: 创建后会直接显示在列表中。
+        - generic [ref=e34]:
+          - generic [ref=e35]: 任务优先级
+          - combobox "任务优先级" [ref=e36]:
+            - option "高"
+            - option "中" [selected]
+            - option "低"
+          - generic [ref=e37]: 未选择时默认使用中优先级。
+        - generic [ref=e38]:
+          - generic [ref=e39]: 任务分类
+          - combobox "任务分类" [ref=e40]:
+            - option "未分类" [selected]
+          - generic [ref=e41]: 可按工作、生活、学习等分类管理。
+        - generic [ref=e42]:
+          - generic [ref=e43]: 截止日期时间
+          - textbox "截止日期时间" [ref=e44]
+          - generic [ref=e45]: 可留空，保存后自动标识逾期、今日到期和未到期。
+        - generic [ref=e46]:
+          - generic [ref=e47]: 提醒时间
+          - textbox "提醒时间" [ref=e48]
+          - generic [ref=e49]: 提醒时间不能晚于截止日期，且必须晚于当前时间。已完成任务不触发提醒。
+        - generic [ref=e50]:
+          - generic [ref=e51]: 重复规则
+          - combobox "重复规则" [ref=e52]:
+            - option "不重复" [selected]
+            - option "每每天"
+            - option "每每周"
+            - option "每每月"
+            - option "每每年"
+          - generic [ref=e53]: 设置重复规则需要先指定截止日期。
+        - generic [ref=e54]:
+          - generic [ref=e55]: 重复间隔
+          - spinbutton "重复间隔" [ref=e56]: "1"
+          - generic [ref=e57]: 每多少天/周/月/年重复一次（1-99）。
+        - generic [ref=e58]:
+          - generic [ref=e59]: 重复结束日期
+          - textbox "重复结束日期" [ref=e60]
+          - generic [ref=e61]: 可留空，表示无限重复。结束日期不能早于截止日期。
+        - generic [ref=e62]:
+          - generic [ref=e63]: 任务标签
+          - generic [ref=e65]: 暂无标签，请先在下方创建标签。
+          - generic [ref=e66]: 可选择多个标签，支持与关键词、状态筛选组合使用。空标签、重复标签和超长标签会被拦截或自动规范化处理。
+        - generic [ref=e67]:
+          - generic [ref=e68]: 任务内容
+          - textbox "任务内容" [ref=e69]
+          - generic [ref=e70]: 最多 1000 个字符。
+      - button "创建任务" [ref=e72] [cursor=pointer]
+  - region "任务分类管理" [ref=e73]:
+    - heading "任务分类管理" [level=2] [ref=e74]
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]: 新分类名称
+        - textbox "新分类名称" [ref=e78]
+        - generic [ref=e79]: 最多 40 个字符，名称不可重复。
+      - button "创建分类" [ref=e80] [cursor=pointer]
+    - generic "已有分类" [ref=e81]:
+      - paragraph [ref=e82]: 暂无分类，创建后可在任务表单中选择。
+  - region "任务标签管理" [ref=e83]:
+    - heading "任务标签管理" [level=2] [ref=e84]
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]: 新标签名称
+        - textbox "新标签名称" [ref=e88]
+        - generic [ref=e89]: 最多 30 个字符，名称不可重复。
+      - generic [ref=e90]:
+        - generic [ref=e91]: 标签颜色
+        - combobox "标签颜色" [ref=e92]:
+          - option "#ef4444"
+          - option "#f97316"
+          - option "#eab308"
+          - option "#22c55e"
+          - option "#14b8a6"
+          - option "#3b82f6"
+          - option "#8b5cf6"
+          - option "#ec4899"
+          - option "#667085"
+          - option "#2563eb" [selected]
+      - button "创建标签" [ref=e93] [cursor=pointer]
+    - generic "已有标签" [ref=e94]:
+      - paragraph [ref=e95]: 暂无标签，创建后可在任务中选择。
+  - region "搜索筛选与排序" [ref=e96]:
+    - heading "搜索筛选与排序" [level=2] [ref=e97]
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]: 关键词
+        - searchbox "关键词" [ref=e101]
+        - generic [ref=e102]: 支持标题和内容匹配，最多 120 个字符。
+      - generic [ref=e103]:
+        - generic [ref=e104]: 任务状态
+        - combobox "任务状态" [ref=e105]:
+          - option "全部状态" [selected]
+          - option "未开始"
+          - option "进行中"
+          - option "已完成"
+          - option "已归档"
+      - generic [ref=e106]:
+        - generic [ref=e107]: 任务优先级
+        - combobox "任务优先级" [ref=e108]:
+          - option "全部优先级" [selected]
+          - option "高"
+          - option "中"
+          - option "低"
+      - generic [ref=e109]:
+        - generic [ref=e110]: 任务标签
+        - combobox "任务标签" [ref=e111]:
+          - option "全部标签" [selected]
+      - generic [ref=e112]:
+        - generic [ref=e113]: 排序字段
+        - combobox "排序字段" [ref=e114]:
+          - option "按创建时间" [selected]
+          - option "按更新时间"
+          - option "按截止时间"
+          - option "按优先级"
+          - option "按状态"
+          - option "按标题"
+      - generic [ref=e115]:
+        - generic [ref=e116]: 排序方向
+        - combobox "排序方向" [ref=e117]:
+          - option "降序（由高到低）" [selected]
+          - option "升序（由低到高）"
+      - generic [ref=e118]:
+        - generic [ref=e119]: 每页条数
+        - combobox "每页条数" [ref=e120]:
+          - option "10 条/页"
+          - option "20 条/页" [selected]
+          - option "50 条/页"
+          - option "100 条/页"
+      - button "搜索" [ref=e121] [cursor=pointer]
+      - link "清空筛选" [ref=e122] [cursor=pointer]:
+        - /url: index.php?filter_action=clear&keyword=&status=&priority=&tag_id=&sort_by=created_at&sort_order=desc&page=1&page_size=20
+    - status [ref=e123]: 当前显示完整任务列表，共 3 条。
+  - region "任务批量操作" [ref=e124]:
+    - heading "任务批量操作" [level=2] [ref=e125]
+    - generic [ref=e126]:
+      - status [ref=e127]: 已选择 0 条
+      - generic [ref=e128]:
+        - generic [ref=e129]: 目标分类
+        - combobox "目标分类" [ref=e130]:
+          - option "设为未分类" [selected]
+      - generic [ref=e131]:
+        - generic [ref=e132]: 目标优先级
+        - combobox "目标优先级" [ref=e133]:
+          - option "高"
+          - option "中" [selected]
+          - option "低"
+      - button "批量完成" [disabled] [ref=e134]
+      - button "批量归档" [disabled] [ref=e135]
+      - button "修改分类" [disabled] [ref=e136]
+      - button "修改优先级" [disabled] [ref=e137]
+      - button "批量删除" [disabled] [ref=e138]
+  - region "任务列表" [ref=e139]:
+    - generic [ref=e140]:
+      - checkbox "选择当前页全部任务" [ref=e142] [cursor=pointer]
+      - generic [ref=e143]: 任务标题
+      - generic [ref=e144]: 内容摘要
+      - generic [ref=e145]: 分类
+      - generic [ref=e146]: 优先级
+      - generic [ref=e147]: 状态
+      - generic [ref=e148]: 截止时间
+      - generic [ref=e149]: 更新时间
+      - generic [ref=e150]: 操作
+    - heading "任务列表" [level=2] [ref=e151]
+    - article [ref=e152]:
+      - checkbox "选择任务 Gamma 验收完成" [ref=e154] [cursor=pointer]
+      - generic [ref=e155]:
+        - heading "Gamma 验收完成" [level=3] [ref=e156]
+        - paragraph [ref=e157]: 创建：2026-06-01 11:00
+      - paragraph [ref=e158]: 任务筛选已完成
+      - generic [ref=e159]: 未分类
+      - generic [ref=e160]: 中
+      - generic [ref=e161]:
+        - generic [ref=e162]: 已完成
+        - generic [ref=e163]:
+          - combobox "Gamma 验收完成 状态" [ref=e164]:
+            - option "未开始"
+            - option "进行中"
+            - option "已完成" [selected]
+            - option "已归档"
+          - button "更新" [ref=e165] [cursor=pointer]
+      - generic [ref=e166]:
+        - generic [ref=e167]: 未设置
+        - generic [ref=e168]: 未设置截止时间
+      - time [ref=e169]: 2026-06-01 10:51
+      - navigation "Gamma 验收完成 操作" [ref=e170]:
+        - link "查看" [ref=e171] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-003
+        - link "编辑" [ref=e172] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-003
+        - button "删除" [ref=e174] [cursor=pointer]
+    - article [ref=e175]:
+      - checkbox "选择任务 Beta 内容复核" [ref=e177] [cursor=pointer]
+      - generic [ref=e178]:
+        - heading "Beta 内容复核" [level=3] [ref=e179]
+        - paragraph [ref=e180]: 创建：2026-06-01 10:00
+      - paragraph [ref=e181]: "检查搜索筛选边界字符 #@!"
+      - generic [ref=e182]: 未分类
+      - generic [ref=e183]: 中
+      - generic [ref=e184]:
+        - generic [ref=e185]: 进行中
+        - generic [ref=e186]:
+          - combobox "Beta 内容复核 状态" [ref=e187]:
+            - option "未开始"
+            - option "进行中" [selected]
+            - option "已完成"
+            - option "已归档"
+          - button "更新" [ref=e188] [cursor=pointer]
+      - generic [ref=e189]:
+        - generic [ref=e190]: 未设置
+        - generic [ref=e191]: 未设置截止时间
+      - time [ref=e192]: 2026-06-01 10:00
+      - navigation "Beta 内容复核 操作" [ref=e193]:
+        - link "查看" [ref=e194] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-002
+        - link "编辑" [ref=e195] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-002
+        - button "删除" [ref=e197] [cursor=pointer]
+    - article [ref=e198]:
+      - checkbox "选择任务 Alpha 发布计划" [ref=e200] [cursor=pointer]
+      - generic [ref=e201]:
+        - heading "Alpha 发布计划" [level=3] [ref=e202]
+        - paragraph [ref=e203]: 创建：2026-06-01 09:00
+      - paragraph [ref=e204]: 完成登录页面和发布说明
+      - generic [ref=e205]: 未分类
+      - generic [ref=e206]: 中
+      - generic [ref=e207]:
+        - generic [ref=e208]: 已归档
+        - generic [ref=e209]:
+          - combobox "Alpha 发布计划 状态" [ref=e210]:
+            - option "未开始"
+            - option "进行中"
+            - option "已完成"
+            - option "已归档" [selected]
+          - button "更新" [ref=e211] [cursor=pointer]
+      - generic [ref=e212]:
+        - generic [ref=e213]: 未设置
+        - generic [ref=e214]: 未设置截止时间
+      - time [ref=e215]: 2026-06-01 01:41
+      - navigation "Alpha 发布计划 操作" [ref=e216]:
+        - link "查看" [ref=e217] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-001
+        - link "编辑" [ref=e218] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-001
+        - button "删除" [ref=e220] [cursor=pointer]
+    - generic [ref=e221]:
+      - generic [ref=e222]: 第 1 / 1 页，共 3 条
+      - generic [ref=e224]:
+        - generic [ref=e225]: 每页显示
+        - combobox "每页显示" [ref=e226]:
+          - option "10 条"
+          - option "20 条" [selected]
+          - option "50 条"
+          - option "100 条"

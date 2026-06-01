@@ -1,0 +1,187 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "待办任务管理" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 按优先级和创建时间展示任务标题、内容摘要、状态、截止时间、更新时间和操作入口。
+    - generic [ref=e7]: 当前任务：4 条
+  - region "任务状态统计" [ref=e8]:
+    - article [ref=e9]:
+      - paragraph [ref=e10]: 未开始
+      - paragraph [ref=e11]: "0"
+    - article [ref=e12]:
+      - paragraph [ref=e13]: 进行中
+      - paragraph [ref=e14]: "2"
+    - article [ref=e15]:
+      - paragraph [ref=e16]: 已完成
+      - paragraph [ref=e17]: "1"
+    - article [ref=e18]:
+      - paragraph [ref=e19]: 已归档
+      - paragraph [ref=e20]: "1"
+  - region "新增任务" [ref=e21]:
+    - heading "新增任务" [level=2] [ref=e22]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: 任务标题
+          - textbox "任务标题" [ref=e27]
+          - generic [ref=e28]: 最多 80 个字符。
+        - generic [ref=e29]:
+          - generic [ref=e30]: 初始状态
+          - combobox "初始状态" [ref=e31]:
+            - option "未开始" [selected]
+            - option "进行中"
+            - option "已完成"
+            - option "已归档"
+          - generic [ref=e32]: 创建后会直接显示在列表中。
+        - generic [ref=e33]:
+          - generic [ref=e34]: 任务优先级
+          - combobox "任务优先级" [ref=e35]:
+            - option "高"
+            - option "中" [selected]
+            - option "低"
+          - generic [ref=e36]: 未选择时默认使用中优先级。
+        - generic [ref=e37]:
+          - generic [ref=e38]: 截止日期时间
+          - textbox "截止日期时间" [ref=e39]
+          - generic [ref=e40]: 可留空，保存后自动标识逾期、今日到期和未到期。
+        - generic [ref=e41]:
+          - generic [ref=e42]: 任务内容
+          - textbox "任务内容" [ref=e43]
+          - generic [ref=e44]: 最多 1000 个字符。
+      - button "创建任务" [ref=e46] [cursor=pointer]
+  - region "搜索筛选" [ref=e47]:
+    - heading "搜索筛选" [level=2] [ref=e48]
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]: 关键词
+        - searchbox "关键词" [ref=e52]
+        - generic [ref=e53]: 支持标题和内容匹配，最多 120 个字符。
+      - generic [ref=e54]:
+        - generic [ref=e55]: 任务状态
+        - combobox "任务状态" [ref=e56]:
+          - option "全部状态" [selected]
+          - option "未开始"
+          - option "进行中"
+          - option "已完成"
+          - option "已归档"
+      - generic [ref=e57]:
+        - generic [ref=e58]: 任务优先级
+        - combobox "任务优先级" [ref=e59]:
+          - option "全部优先级" [selected]
+          - option "高"
+          - option "中"
+          - option "低"
+      - button "搜索" [ref=e60] [cursor=pointer]
+      - link "清空筛选" [ref=e61] [cursor=pointer]:
+        - /url: index.php?filter_action=clear&keyword=&status=&priority=
+    - status [ref=e62]: 当前显示完整任务列表，共 4 条。
+  - region "任务列表" [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: 任务标题
+      - generic [ref=e66]: 内容摘要
+      - generic [ref=e67]: 优先级
+      - generic [ref=e68]: 状态
+      - generic [ref=e69]: 截止时间
+      - generic [ref=e70]: 更新时间
+      - generic [ref=e71]: 操作
+    - heading "任务列表" [level=2] [ref=e72]
+    - article [ref=e73]:
+      - generic [ref=e74]:
+        - heading "截止日期自动化验证任务" [level=3] [ref=e75]
+        - paragraph [ref=e76]: 创建：2026-06-01 01:57
+      - paragraph [ref=e77]: 验证游标释放后保存速度。
+      - generic [ref=e78]: 高
+      - generic [ref=e79]:
+        - generic [ref=e80]: 进行中
+        - generic [ref=e81]:
+          - combobox "截止日期自动化验证任务 状态" [ref=e82]:
+            - option "未开始"
+            - option "进行中" [selected]
+            - option "已完成"
+            - option "已归档"
+          - button "更新" [ref=e83] [cursor=pointer]
+      - generic [ref=e84]:
+        - generic [ref=e85]: 未到期
+        - time [ref=e86]: 2026-06-02 09:00
+      - time [ref=e87]: 2026-06-01 01:58
+      - navigation "截止日期自动化验证任务 操作" [ref=e88]:
+        - link "查看" [ref=e89] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-20260601015703-e6ff9760
+        - link "编辑" [ref=e90] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-20260601015703-e6ff9760
+        - button "删除" [ref=e92] [cursor=pointer]
+    - article [ref=e93]:
+      - generic [ref=e94]:
+        - heading "Gamma 验收完成" [level=3] [ref=e95]
+        - paragraph [ref=e96]: 创建：2026-06-01 11:00
+      - paragraph [ref=e97]: 任务筛选已完成
+      - generic [ref=e98]: 中
+      - generic [ref=e99]:
+        - generic [ref=e100]: 已完成
+        - generic [ref=e101]:
+          - combobox "Gamma 验收完成 状态" [ref=e102]:
+            - option "未开始"
+            - option "进行中"
+            - option "已完成" [selected]
+            - option "已归档"
+          - button "更新" [ref=e103] [cursor=pointer]
+      - generic [ref=e104]:
+        - generic [ref=e105]: 未设置
+        - generic [ref=e106]: 未设置截止时间
+      - time [ref=e107]: 2026-06-01 11:00
+      - navigation "Gamma 验收完成 操作" [ref=e108]:
+        - link "查看" [ref=e109] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-003
+        - link "编辑" [ref=e110] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-003
+        - button "删除" [ref=e112] [cursor=pointer]
+    - article [ref=e113]:
+      - generic [ref=e114]:
+        - heading "Beta 内容复核" [level=3] [ref=e115]
+        - paragraph [ref=e116]: 创建：2026-06-01 10:00
+      - paragraph [ref=e117]: "检查搜索筛选边界字符 #@!"
+      - generic [ref=e118]: 中
+      - generic [ref=e119]:
+        - generic [ref=e120]: 进行中
+        - generic [ref=e121]:
+          - combobox "Beta 内容复核 状态" [ref=e122]:
+            - option "未开始"
+            - option "进行中" [selected]
+            - option "已完成"
+            - option "已归档"
+          - button "更新" [ref=e123] [cursor=pointer]
+      - generic [ref=e124]:
+        - generic [ref=e125]: 未设置
+        - generic [ref=e126]: 未设置截止时间
+      - time [ref=e127]: 2026-06-01 10:00
+      - navigation "Beta 内容复核 操作" [ref=e128]:
+        - link "查看" [ref=e129] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-002
+        - link "编辑" [ref=e130] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-002
+        - button "删除" [ref=e132] [cursor=pointer]
+    - article [ref=e133]:
+      - generic [ref=e134]:
+        - heading "Alpha 发布计划" [level=3] [ref=e135]
+        - paragraph [ref=e136]: 创建：2026-06-01 09:00
+      - paragraph [ref=e137]: 完成登录页面和发布说明
+      - generic [ref=e138]: 中
+      - generic [ref=e139]:
+        - generic [ref=e140]: 已归档
+        - generic [ref=e141]:
+          - combobox "Alpha 发布计划 状态" [ref=e142]:
+            - option "未开始"
+            - option "进行中"
+            - option "已完成"
+            - option "已归档" [selected]
+          - button "更新" [ref=e143] [cursor=pointer]
+      - generic [ref=e144]:
+        - generic [ref=e145]: 未设置
+        - generic [ref=e146]: 未设置截止时间
+      - time [ref=e147]: 2026-06-01 01:41
+      - navigation "Alpha 发布计划 操作" [ref=e148]:
+        - link "查看" [ref=e149] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-001
+        - link "编辑" [ref=e150] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-001
+        - button "删除" [ref=e152] [cursor=pointer]

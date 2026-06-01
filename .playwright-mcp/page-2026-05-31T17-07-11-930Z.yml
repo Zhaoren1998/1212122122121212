@@ -1,0 +1,45 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "待办任务管理" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 按创建时间倒序展示任务标题、内容摘要、状态和操作入口。
+    - generic [ref=e7]: 当前任务：1 条
+  - region "新增任务" [ref=e8]:
+    - heading "新增任务" [level=2] [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: 任务标题
+          - textbox "任务标题" [ref=e14]
+          - generic [ref=e15]: 最多 80 个字符。
+        - generic [ref=e16]:
+          - generic [ref=e17]: 初始状态
+          - combobox "初始状态" [ref=e18]:
+            - option "待处理" [selected]
+            - option "进行中"
+            - option "已完成"
+          - generic [ref=e19]: 创建后会直接显示在列表中。
+        - generic [ref=e20]:
+          - generic [ref=e21]: 任务内容
+          - textbox "任务内容" [ref=e22]
+          - generic [ref=e23]: 最多 1000 个字符。
+      - button "创建任务" [ref=e25] [cursor=pointer]
+  - region "任务列表" [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]: 任务标题
+      - generic [ref=e29]: 内容摘要
+      - generic [ref=e30]: 状态
+      - generic [ref=e31]: 创建时间
+      - generic [ref=e32]: 操作
+    - heading "任务列表" [level=2] [ref=e33]
+    - article [ref=e34]:
+      - heading "删除测试任务" [level=3] [ref=e36]
+      - paragraph [ref=e37]: 用于验证删除功能
+      - generic [ref=e39]: 待处理
+      - time [ref=e40]: 2026-06-01 01:07
+      - navigation "删除测试任务 操作" [ref=e41]:
+        - link "查看" [ref=e42] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-20260601010701-160d3714
+        - link "编辑" [ref=e43] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-20260601010701-160d3714
+        - button "删除" [ref=e45] [cursor=pointer]

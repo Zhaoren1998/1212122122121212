@@ -1,0 +1,475 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "待办任务管理" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 按优先级和创建时间展示任务标题、内容摘要、状态、截止时间、更新时间和操作入口。
+    - generic [ref=e7]:
+      - text: 当前任务：2 条
+      - generic [ref=e8]:
+        - link "查看归档列表" [ref=e9] [cursor=pointer]:
+          - /url: index.php?action=archive
+        - link "查看回收站" [ref=e10] [cursor=pointer]:
+          - /url: index.php?action=trash
+  - region "任务统计看板" [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - heading "任务统计看板" [level=2] [ref=e14]
+        - paragraph [ref=e15]: 统计范围为 SQLite 中未永久删除的任务，刷新页面后按当前数据重新计算。
+      - generic [ref=e16]: 更新时间：2026-06-01 11:33
+    - generic "核心任务指标" [ref=e17]:
+      - article [ref=e18]:
+        - paragraph [ref=e19]: 任务总数
+        - paragraph [ref=e20]: "3"
+      - article [ref=e21]:
+        - paragraph [ref=e22]: 已完成
+        - paragraph [ref=e23]: "1"
+      - article [ref=e24]:
+        - paragraph [ref=e25]: 进行中
+        - paragraph [ref=e26]: "1"
+      - article [ref=e27]:
+        - paragraph [ref=e28]: 逾期
+        - paragraph [ref=e29]: "0"
+      - article [ref=e30]:
+        - paragraph [ref=e31]: 归档
+        - paragraph [ref=e32]: "1"
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "按状态分布" [level=3] [ref=e35]
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - generic [ref=e38]: 未开始
+            - generic [ref=e40]: "0"
+          - listitem [ref=e41]:
+            - generic [ref=e42]: 进行中
+            - generic [ref=e45]: "1"
+          - listitem [ref=e46]:
+            - generic [ref=e47]: 已完成
+            - generic [ref=e50]: "1"
+          - listitem [ref=e51]:
+            - generic [ref=e52]: 已归档
+            - generic [ref=e55]: "1"
+      - generic [ref=e56]:
+        - heading "按优先级分布" [level=3] [ref=e57]
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - generic [ref=e60]: 高
+            - generic [ref=e62]: "0"
+          - listitem [ref=e63]:
+            - generic [ref=e64]: 中
+            - generic [ref=e67]: "3"
+          - listitem [ref=e68]:
+            - generic [ref=e69]: 低
+            - generic [ref=e71]: "0"
+      - generic [ref=e72]:
+        - heading "近 7 天待办" [level=3] [ref=e73]
+        - paragraph [ref=e74]: 近期没有设置截止时间的未完成任务。
+  - region "任务日历视图" [ref=e75]:
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - heading "任务日历视图" [level=2] [ref=e78]
+        - paragraph [ref=e79]: 按截止日期和提醒时间展示任务，当前月份共有 0 个日历事项，覆盖 0 天。
+      - navigation "日历月份切换" [ref=e80]:
+        - link "上月" [ref=e81] [cursor=pointer]:
+          - /url: index.php?calendar_month=2026-06&calendar_date=2026-06-01#task-calendar
+        - generic [ref=e82]: 2026年07月
+        - link "下月" [ref=e83] [cursor=pointer]:
+          - /url: index.php?calendar_month=2026-08&calendar_date=2026-08-01#task-calendar
+        - link "今天" [ref=e84] [cursor=pointer]:
+          - /url: index.php?calendar_month=2026-06&calendar_date=2026-06-01#task-calendar
+    - generic [ref=e85]:
+      - grid "2026年07月任务日历" [ref=e86]:
+        - columnheader "周一" [ref=e87]
+        - columnheader "周二" [ref=e88]
+        - columnheader "周三" [ref=e89]
+        - columnheader "周四" [ref=e90]
+        - columnheader "周五" [ref=e91]
+        - columnheader "周六" [ref=e92]
+        - columnheader "周日" [ref=e93]
+        - gridcell [ref=e94]
+        - gridcell [ref=e95]
+        - gridcell "2026-07-01，0 个日历事项" [selected] [ref=e96]:
+          - link "2026-07-01，0 个日历事项" [ref=e97] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-01#task-calendar
+            - generic [ref=e98]: "1"
+        - gridcell "2026-07-02，0 个日历事项" [ref=e99]:
+          - link "2026-07-02，0 个日历事项" [ref=e100] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-02#task-calendar
+            - generic [ref=e101]: "2"
+        - gridcell "2026-07-03，0 个日历事项" [ref=e102]:
+          - link "2026-07-03，0 个日历事项" [ref=e103] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-03#task-calendar
+            - generic [ref=e104]: "3"
+        - gridcell "2026-07-04，0 个日历事项" [ref=e105]:
+          - link "2026-07-04，0 个日历事项" [ref=e106] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-04#task-calendar
+            - generic [ref=e107]: "4"
+        - gridcell "2026-07-05，0 个日历事项" [ref=e108]:
+          - link "2026-07-05，0 个日历事项" [ref=e109] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-05#task-calendar
+            - generic [ref=e110]: "5"
+        - gridcell "2026-07-06，0 个日历事项" [ref=e111]:
+          - link "2026-07-06，0 个日历事项" [ref=e112] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-06#task-calendar
+            - generic [ref=e113]: "6"
+        - gridcell "2026-07-07，0 个日历事项" [ref=e114]:
+          - link "2026-07-07，0 个日历事项" [ref=e115] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-07#task-calendar
+            - generic [ref=e116]: "7"
+        - gridcell "2026-07-08，0 个日历事项" [ref=e117]:
+          - link "2026-07-08，0 个日历事项" [ref=e118] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-08#task-calendar
+            - generic [ref=e119]: "8"
+        - gridcell "2026-07-09，0 个日历事项" [ref=e120]:
+          - link "2026-07-09，0 个日历事项" [ref=e121] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-09#task-calendar
+            - generic [ref=e122]: "9"
+        - gridcell "2026-07-10，0 个日历事项" [ref=e123]:
+          - link "2026-07-10，0 个日历事项" [ref=e124] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-10#task-calendar
+            - generic [ref=e125]: "10"
+        - gridcell "2026-07-11，0 个日历事项" [ref=e126]:
+          - link "2026-07-11，0 个日历事项" [ref=e127] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-11#task-calendar
+            - generic [ref=e128]: "11"
+        - gridcell "2026-07-12，0 个日历事项" [ref=e129]:
+          - link "2026-07-12，0 个日历事项" [ref=e130] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-12#task-calendar
+            - generic [ref=e131]: "12"
+        - gridcell "2026-07-13，0 个日历事项" [ref=e132]:
+          - link "2026-07-13，0 个日历事项" [ref=e133] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-13#task-calendar
+            - generic [ref=e134]: "13"
+        - gridcell "2026-07-14，0 个日历事项" [ref=e135]:
+          - link "2026-07-14，0 个日历事项" [ref=e136] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-14#task-calendar
+            - generic [ref=e137]: "14"
+        - gridcell "2026-07-15，0 个日历事项" [ref=e138]:
+          - link "2026-07-15，0 个日历事项" [ref=e139] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-15#task-calendar
+            - generic [ref=e140]: "15"
+        - gridcell "2026-07-16，0 个日历事项" [ref=e141]:
+          - link "2026-07-16，0 个日历事项" [ref=e142] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-16#task-calendar
+            - generic [ref=e143]: "16"
+        - gridcell "2026-07-17，0 个日历事项" [ref=e144]:
+          - link "2026-07-17，0 个日历事项" [ref=e145] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-17#task-calendar
+            - generic [ref=e146]: "17"
+        - gridcell "2026-07-18，0 个日历事项" [ref=e147]:
+          - link "2026-07-18，0 个日历事项" [ref=e148] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-18#task-calendar
+            - generic [ref=e149]: "18"
+        - gridcell "2026-07-19，0 个日历事项" [ref=e150]:
+          - link "2026-07-19，0 个日历事项" [ref=e151] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-19#task-calendar
+            - generic [ref=e152]: "19"
+        - gridcell "2026-07-20，0 个日历事项" [ref=e153]:
+          - link "2026-07-20，0 个日历事项" [ref=e154] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-20#task-calendar
+            - generic [ref=e155]: "20"
+        - gridcell "2026-07-21，0 个日历事项" [ref=e156]:
+          - link "2026-07-21，0 个日历事项" [ref=e157] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-21#task-calendar
+            - generic [ref=e158]: "21"
+        - gridcell "2026-07-22，0 个日历事项" [ref=e159]:
+          - link "2026-07-22，0 个日历事项" [ref=e160] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-22#task-calendar
+            - generic [ref=e161]: "22"
+        - gridcell "2026-07-23，0 个日历事项" [ref=e162]:
+          - link "2026-07-23，0 个日历事项" [ref=e163] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-23#task-calendar
+            - generic [ref=e164]: "23"
+        - gridcell "2026-07-24，0 个日历事项" [ref=e165]:
+          - link "2026-07-24，0 个日历事项" [ref=e166] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-24#task-calendar
+            - generic [ref=e167]: "24"
+        - gridcell "2026-07-25，0 个日历事项" [ref=e168]:
+          - link "2026-07-25，0 个日历事项" [ref=e169] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-25#task-calendar
+            - generic [ref=e170]: "25"
+        - gridcell "2026-07-26，0 个日历事项" [ref=e171]:
+          - link "2026-07-26，0 个日历事项" [ref=e172] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-26#task-calendar
+            - generic [ref=e173]: "26"
+        - gridcell "2026-07-27，0 个日历事项" [ref=e174]:
+          - link "2026-07-27，0 个日历事项" [ref=e175] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-27#task-calendar
+            - generic [ref=e176]: "27"
+        - gridcell "2026-07-28，0 个日历事项" [ref=e177]:
+          - link "2026-07-28，0 个日历事项" [ref=e178] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-28#task-calendar
+            - generic [ref=e179]: "28"
+        - gridcell "2026-07-29，0 个日历事项" [ref=e180]:
+          - link "2026-07-29，0 个日历事项" [ref=e181] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-29#task-calendar
+            - generic [ref=e182]: "29"
+        - gridcell "2026-07-30，0 个日历事项" [ref=e183]:
+          - link "2026-07-30，0 个日历事项" [ref=e184] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-30#task-calendar
+            - generic [ref=e185]: "30"
+        - gridcell "2026-07-31，0 个日历事项" [ref=e186]:
+          - link "2026-07-31，0 个日历事项" [ref=e187] [cursor=pointer]:
+            - /url: index.php?calendar_month=2026-07&calendar_date=2026-07-31#task-calendar
+            - generic [ref=e188]: "31"
+        - gridcell [ref=e189]
+        - gridcell [ref=e190]
+      - complementary "2026年07月01日" [ref=e191]:
+        - generic [ref=e192]:
+          - heading "2026年07月01日" [level=3] [ref=e193]
+          - generic [ref=e194]: 0 项
+        - paragraph [ref=e195]: 当天没有截止任务或提醒事项。
+  - region "任务状态统计" [ref=e196]:
+    - article [ref=e197]:
+      - paragraph [ref=e198]: 未开始
+      - paragraph [ref=e199]: "0"
+    - article [ref=e200]:
+      - paragraph [ref=e201]: 进行中
+      - paragraph [ref=e202]: "1"
+    - article [ref=e203]:
+      - paragraph [ref=e204]: 已完成
+      - paragraph [ref=e205]: "1"
+    - article [ref=e206]:
+      - paragraph [ref=e207]: 已归档
+      - paragraph [ref=e208]: "0"
+  - region "新增任务" [ref=e209]:
+    - heading "新增任务" [level=2] [ref=e210]
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]: 任务标题
+          - textbox "任务标题" [ref=e215]
+          - generic [ref=e216]: 最多 80 个字符。
+        - generic [ref=e217]:
+          - generic [ref=e218]: 初始状态
+          - combobox "初始状态" [ref=e219]:
+            - option "未开始" [selected]
+            - option "进行中"
+            - option "已完成"
+            - option "已归档"
+          - generic [ref=e220]: 创建后会直接显示在列表中。
+        - generic [ref=e221]:
+          - generic [ref=e222]: 任务优先级
+          - combobox "任务优先级" [ref=e223]:
+            - option "高"
+            - option "中" [selected]
+            - option "低"
+          - generic [ref=e224]: 未选择时默认使用中优先级。
+        - generic [ref=e225]:
+          - generic [ref=e226]: 任务分类
+          - combobox "任务分类" [ref=e227]:
+            - option "未分类" [selected]
+          - generic [ref=e228]: 可按工作、生活、学习等分类管理。
+        - generic [ref=e229]:
+          - generic [ref=e230]: 截止日期时间
+          - textbox "截止日期时间" [ref=e231]
+          - generic [ref=e232]: 可留空，保存后自动标识逾期、今日到期和未到期。
+        - generic [ref=e233]:
+          - generic [ref=e234]: 提醒时间
+          - textbox "提醒时间" [ref=e235]
+          - generic [ref=e236]: 提醒时间不能晚于截止日期，且必须晚于当前时间。已完成任务不触发提醒。
+        - generic [ref=e237]:
+          - generic [ref=e238]: 重复规则
+          - combobox "重复规则" [ref=e239]:
+            - option "不重复" [selected]
+            - option "每每天"
+            - option "每每周"
+            - option "每每月"
+            - option "每每年"
+          - generic [ref=e240]: 设置重复规则需要先指定截止日期。
+        - generic [ref=e241]:
+          - generic [ref=e242]: 重复间隔
+          - spinbutton "重复间隔" [ref=e243]: "1"
+          - generic [ref=e244]: 每多少天/周/月/年重复一次（1-99）。
+        - generic [ref=e245]:
+          - generic [ref=e246]: 重复结束日期
+          - textbox "重复结束日期" [ref=e247]
+          - generic [ref=e248]: 可留空，表示无限重复。结束日期不能早于截止日期。
+        - generic [ref=e249]:
+          - generic [ref=e250]: 任务标签
+          - generic [ref=e252]: 暂无标签，请先在下方创建标签。
+          - generic [ref=e253]: 可选择多个标签，支持与关键词、状态筛选组合使用。空标签、重复标签和超长标签会被拦截或自动规范化处理。
+        - generic [ref=e254]:
+          - generic [ref=e255]: 任务内容
+          - textbox "任务内容" [ref=e256]
+          - generic [ref=e257]: 最多 1000 个字符。
+      - button "创建任务" [ref=e259] [cursor=pointer]
+  - region "任务分类管理" [ref=e260]:
+    - heading "任务分类管理" [level=2] [ref=e261]
+    - generic [ref=e262]:
+      - generic [ref=e263]:
+        - generic [ref=e264]: 新分类名称
+        - textbox "新分类名称" [ref=e265]
+        - generic [ref=e266]: 最多 40 个字符，名称不可重复。
+      - button "创建分类" [ref=e267] [cursor=pointer]
+    - generic "已有分类" [ref=e268]:
+      - paragraph [ref=e269]: 暂无分类，创建后可在任务表单中选择。
+  - region "任务标签管理" [ref=e270]:
+    - heading "任务标签管理" [level=2] [ref=e271]
+    - generic [ref=e272]:
+      - generic [ref=e273]:
+        - generic [ref=e274]: 新标签名称
+        - textbox "新标签名称" [ref=e275]
+        - generic [ref=e276]: 最多 30 个字符，名称不可重复。
+      - generic [ref=e277]:
+        - generic [ref=e278]: 标签颜色
+        - combobox "标签颜色" [ref=e279]:
+          - option "#ef4444"
+          - option "#f97316"
+          - option "#eab308"
+          - option "#22c55e"
+          - option "#14b8a6"
+          - option "#3b82f6"
+          - option "#8b5cf6"
+          - option "#ec4899"
+          - option "#667085"
+          - option "#2563eb" [selected]
+      - button "创建标签" [ref=e280] [cursor=pointer]
+    - generic "已有标签" [ref=e281]:
+      - paragraph [ref=e282]: 暂无标签，创建后可在任务中选择。
+  - region "搜索筛选与排序" [ref=e283]:
+    - heading "搜索筛选与排序" [level=2] [ref=e284]
+    - generic [ref=e285]:
+      - generic [ref=e286]:
+        - generic [ref=e287]: 关键词
+        - searchbox "关键词" [ref=e288]
+        - generic [ref=e289]: 支持标题和内容匹配，最多 120 个字符。
+      - generic [ref=e290]:
+        - generic [ref=e291]: 任务状态
+        - combobox "任务状态" [ref=e292]:
+          - option "全部状态" [selected]
+          - option "未开始"
+          - option "进行中"
+          - option "已完成"
+          - option "已归档"
+      - generic [ref=e293]:
+        - generic [ref=e294]: 任务优先级
+        - combobox "任务优先级" [ref=e295]:
+          - option "全部优先级" [selected]
+          - option "高"
+          - option "中"
+          - option "低"
+      - generic [ref=e296]:
+        - generic [ref=e297]: 任务标签
+        - combobox "任务标签" [ref=e298]:
+          - option "全部标签" [selected]
+      - generic [ref=e299]:
+        - generic [ref=e300]: 排序字段
+        - combobox "排序字段" [ref=e301]:
+          - option "按创建时间" [selected]
+          - option "按更新时间"
+          - option "按截止时间"
+          - option "按优先级"
+          - option "按状态"
+          - option "按标题"
+      - generic [ref=e302]:
+        - generic [ref=e303]: 排序方向
+        - combobox "排序方向" [ref=e304]:
+          - option "降序（由高到低）" [selected]
+          - option "升序（由低到高）"
+      - generic [ref=e305]:
+        - generic [ref=e306]: 每页条数
+        - combobox "每页条数" [ref=e307]:
+          - option "10 条/页"
+          - option "20 条/页" [selected]
+          - option "50 条/页"
+          - option "100 条/页"
+      - button "搜索" [ref=e308] [cursor=pointer]
+      - link "清空筛选" [ref=e309] [cursor=pointer]:
+        - /url: index.php?filter_action=clear&keyword=&status=&priority=&tag_id=&sort_by=created_at&sort_order=desc&page=1&page_size=20
+    - status [ref=e310]: 当前显示完整任务列表，共 2 条。
+  - region "任务批量操作" [ref=e311]:
+    - heading "任务批量操作" [level=2] [ref=e312]
+    - generic [ref=e313]:
+      - status [ref=e314]: 已选择 0 条
+      - generic [ref=e315]:
+        - generic [ref=e316]: 目标分类
+        - combobox "目标分类" [ref=e317]:
+          - option "设为未分类" [selected]
+      - generic [ref=e318]:
+        - generic [ref=e319]: 目标优先级
+        - combobox "目标优先级" [ref=e320]:
+          - option "高"
+          - option "中" [selected]
+          - option "低"
+      - button "批量完成" [disabled] [ref=e321]
+      - button "批量归档" [disabled] [ref=e322]
+      - button "修改分类" [disabled] [ref=e323]
+      - button "修改优先级" [disabled] [ref=e324]
+      - button "批量删除" [disabled] [ref=e325]
+  - region "任务列表" [ref=e326]:
+    - generic [ref=e327]:
+      - checkbox "选择当前页全部任务" [ref=e329] [cursor=pointer]
+      - generic [ref=e330]: 任务标题
+      - generic [ref=e331]: 内容摘要
+      - generic [ref=e332]: 分类
+      - generic [ref=e333]: 优先级
+      - generic [ref=e334]: 状态
+      - generic [ref=e335]: 截止时间
+      - generic [ref=e336]: 更新时间
+      - generic [ref=e337]: 操作
+    - heading "任务列表" [level=2] [ref=e338]
+    - article [ref=e339]:
+      - checkbox "选择任务 Gamma 验收完成" [ref=e341] [cursor=pointer]
+      - generic [ref=e342]:
+        - heading "Gamma 验收完成" [level=3] [ref=e343]
+        - paragraph [ref=e344]: 创建：2026-06-01 11:00
+      - paragraph [ref=e345]: 任务筛选已完成
+      - generic [ref=e346]: 未分类
+      - generic [ref=e347]: 中
+      - generic [ref=e348]:
+        - generic [ref=e349]: 已完成
+        - generic [ref=e350]:
+          - combobox "Gamma 验收完成 状态" [ref=e351]:
+            - option "未开始"
+            - option "进行中"
+            - option "已完成" [selected]
+            - option "已归档"
+          - button "更新" [ref=e352] [cursor=pointer]
+      - generic [ref=e353]:
+        - generic [ref=e354]: 未设置
+        - generic [ref=e355]: 未设置截止时间
+      - time [ref=e356]: 2026-06-01 10:51
+      - navigation "Gamma 验收完成 操作" [ref=e357]:
+        - link "查看" [ref=e358] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-003
+        - link "编辑" [ref=e359] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-003
+        - button "归档" [ref=e361] [cursor=pointer]
+        - button "删除" [ref=e363] [cursor=pointer]
+    - article [ref=e364]:
+      - checkbox "选择任务 Beta 内容复核" [ref=e366] [cursor=pointer]
+      - generic [ref=e367]:
+        - heading "Beta 内容复核" [level=3] [ref=e368]
+        - paragraph [ref=e369]: 创建：2026-06-01 10:00
+      - paragraph [ref=e370]: "检查搜索筛选边界字符 #@!"
+      - generic [ref=e371]: 未分类
+      - generic [ref=e372]: 中
+      - generic [ref=e373]:
+        - generic [ref=e374]: 进行中
+        - generic [ref=e375]:
+          - combobox "Beta 内容复核 状态" [ref=e376]:
+            - option "未开始"
+            - option "进行中" [selected]
+            - option "已完成"
+            - option "已归档"
+          - button "更新" [ref=e377] [cursor=pointer]
+      - generic [ref=e378]:
+        - generic [ref=e379]: 未设置
+        - generic [ref=e380]: 未设置截止时间
+      - time [ref=e381]: 2026-06-01 11:01
+      - navigation "Beta 内容复核 操作" [ref=e382]:
+        - link "查看" [ref=e383] [cursor=pointer]:
+          - /url: index.php?action=view&id=task-test-002
+        - link "编辑" [ref=e384] [cursor=pointer]:
+          - /url: index.php?action=edit&id=task-test-002
+        - button "归档" [ref=e386] [cursor=pointer]
+        - button "删除" [ref=e388] [cursor=pointer]
+    - generic [ref=e389]:
+      - generic [ref=e390]: 第 1 / 1 页，共 2 条
+      - generic [ref=e392]:
+        - generic [ref=e393]: 每页显示
+        - combobox "每页显示" [ref=e394]:
+          - option "10 条"
+          - option "20 条" [selected]
+          - option "50 条"
+          - option "100 条"

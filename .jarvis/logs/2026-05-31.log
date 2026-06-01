@@ -1,0 +1,136 @@
+[2026-05-31 16:52:17.377] [INFO ] [Task] 任务开始 [dcd81094] | {"taskId":"dcd81094-2f39-46a7-9add-b95c2ed266b5","taskNo":"dcd81094","contentPreview":"\n\n## 对话历史\n以下是之前的对话记录，请参考以保持上下文连贯：\n\n**AI**: \n\n---\n\n## 当前任务\n做一个php网页，5个功能"}
+
+================================================================================
+任务: dcd81094
+时间: 2026-05-31T16:52:17.377Z
+================================================================================
+
+[2026-05-31 16:52:17.423] [INFO ] [Phase] 阶段开始: requirement | {"phase":"requirement","executor":"codex","role":"pm"}
+[2026-05-31 16:52:17.437] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement","contentLength":71}
+[2026-05-31 16:54:12.986] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":2916,"duration":"115.55s"}
+[2026-05-31 16:54:12.996] [INFO ] [Phase] 阶段通过: requirement | {"phase":"requirement","score":0,"duration":"0.01s","passed":true}
+[2026-05-31 16:54:13.070] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 16:54:13.078] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 16:57:12.930] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":382,"duration":"179.85s"}
+[2026-05-31 16:57:12.947] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 17:00:16.192] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":325,"duration":"183.24s"}
+[2026-05-31 17:00:16.210] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 17:04:10.912] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":429,"duration":"234.70s"}
+[2026-05-31 17:04:10.946] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 17:08:56.412] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"285.46s","error":"2026-05-31T17:04:32.735572Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest(\"http/request failed: error sending request for url (ht...(截断)"}
+[2026-05-31 17:08:56.433] [WARN ] [Retry] 重试 1/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":1,"maxRetries":10,"reason":"快速定点修复: 验收未通过"}
+[2026-05-31 17:08:56.449] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 17:08:56.456] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 17:10:14.017] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":364,"duration":"77.56s"}
+[2026-05-31 17:10:14.032] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":71}
+[2026-05-31 17:11:55.383] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":217,"duration":"101.35s","error":"任务已被用户取消"}
+[2026-05-31 17:11:55.400] [ERROR] [Task] 任务失败 [dcd81094] | {"taskId":"dcd81094-2f39-46a7-9add-b95c2ed266b5","taskNo":"dcd81094","success":false,"duration":"1178.03s"}
+[2026-05-31 17:11:55.400] [ERROR] [Task] 任务失败: 🚫 任务已被用户取消 | {"error":"🚫 任务已被用户取消"}
+[2026-05-31 17:13:09.340] [INFO ] [Task] 任务开始 [531ffbee] | {"taskId":"531ffbee-c46f-42e2-8127-8181b8be87d6","taskNo":"531ffbee","contentPreview":"\n\n## 对话历史\n以下是之前的对话记录，请参考以保持上下文连贯：\n\n**用户**: 做一个php网页，5个功能\n\n**AI**: 正在分析需求...\n标准流程: 需求分析 → 需求评审 → 开发实施"}
+
+================================================================================
+任务: 531ffbee
+时间: 2026-05-31T17:13:09.340Z
+================================================================================
+
+[2026-05-31 17:13:09.459] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 17:13:09.478] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":603}
+[2026-05-31 17:15:50.800] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":543,"duration":"161.32s","error":"任务已被用户取消"}
+[2026-05-31 17:15:50.814] [ERROR] [Task] 任务失败 [531ffbee] | {"taskId":"531ffbee-c46f-42e2-8127-8181b8be87d6","taskNo":"531ffbee","success":false,"duration":"161.48s"}
+[2026-05-31 17:15:50.815] [ERROR] [Task] 任务失败: 🚫 任务已被用户取消 | {"error":"🚫 任务已被用户取消"}
+[2026-05-31 17:16:26.865] [INFO ] [Task] 任务开始 [b8dc18f1] | {"taskId":"b8dc18f1-a13e-4e64-b444-870c4200fc21","taskNo":"b8dc18f1","contentPreview":"\n\n## 对话历史\n以下是之前的对话记录，请参考以保持上下文连贯：\n\n**用户**: 做一个php网页，5个功能\n\n**AI**: 正在分析需求...\n标准流程: 需求分析 → 需求评审 → 开发实施"}
+
+================================================================================
+任务: b8dc18f1
+时间: 2026-05-31T17:16:26.866Z
+================================================================================
+
+[2026-05-31 17:16:26.927] [INFO ] [Phase] 阶段开始: requirement | {"phase":"requirement","executor":"codex","role":"pm"}
+[2026-05-31 17:16:26.936] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement","contentLength":1153}
+[2026-05-31 17:22:18.515] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":11117,"duration":"351.58s"}
+[2026-05-31 17:22:18.539] [INFO ] [Phase] 阶段通过: requirement | {"phase":"requirement","score":0,"duration":"0.01s","passed":true}
+[2026-05-31 17:22:18.603] [INFO ] [Phase] 阶段开始: requirement_review | {"phase":"requirement_review","executor":"codex","role":"qa"}
+[2026-05-31 17:22:18.614] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement_review","contentLength":1153}
+[2026-05-31 17:24:23.715] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":87,"duration":"125.10s"}
+[2026-05-31 17:24:23.734] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement_review","contentLength":1153}
+[2026-05-31 17:25:45.740] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":123,"duration":"82.01s"}
+[2026-05-31 17:25:45.756] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement_review","contentLength":1153}
+[2026-05-31 17:26:37.107] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":68,"duration":"51.35s"}
+[2026-05-31 17:26:37.128] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement_review","contentLength":1153}
+[2026-05-31 17:27:15.880] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":75,"duration":"38.75s"}
+[2026-05-31 17:27:15.901] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"requirement_review","contentLength":1153}
+[2026-05-31 17:28:06.893] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":101,"duration":"50.99s"}
+[2026-05-31 17:28:06.930] [INFO ] [Phase] 阶段通过: requirement_review | {"phase":"requirement_review","score":0,"duration":"0.03s","passed":true}
+[2026-05-31 17:28:07.129] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 17:28:07.136] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 17:36:15.780] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":670,"duration":"488.64s"}
+[2026-05-31 17:36:15.794] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 17:42:30.539] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":538,"duration":"374.74s"}
+[2026-05-31 17:42:30.558] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 17:44:35.498] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":343,"duration":"124.94s"}
+[2026-05-31 17:44:35.510] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 17:52:01.075] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":737,"duration":"445.56s"}
+[2026-05-31 17:52:01.121] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 17:59:57.070] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":974,"duration":"475.95s"}
+[2026-05-31 17:59:57.089] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:08:41.306] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codex","success":true,"outputLength":569,"duration":"524.22s"}
+[2026-05-31 18:08:41.322] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:08:45.418] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"4.10s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:08:45.437] [WARN ] [Retry] 重试 1/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":1,"maxRetries":10,"reason":"快速定点修复: 验收未通过"}
+[2026-05-31 18:08:45.453] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:08:45.461] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:08:50.304] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"4.84s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:08:50.311] [WARN ] [Retry] 重试 2/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":2,"maxRetries":10,"reason":"扩展上下文修复: 验收未通过"}
+[2026-05-31 18:08:50.352] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:08:50.359] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:08:53.770] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.41s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:08:53.773] [WARN ] [Retry] 重试 3/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":3,"maxRetries":10,"reason":"深度分析重构: 验收未通过"}
+[2026-05-31 18:08:53.793] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:08:53.798] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:08:57.127] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.33s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:08:57.133] [WARN ] [Retry] 重试 4/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":4,"maxRetries":10,"reason":"换个思路: 验收未通过"}
+[2026-05-31 18:08:57.142] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:08:57.149] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:02.212] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"5.06s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:02.218] [WARN ] [Retry] 重试 5/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":5,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:02.228] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:02.234] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:05.494] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.26s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:05.504] [WARN ] [Retry] 重试 6/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":6,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:05.523] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:05.527] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:08.811] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.28s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:08.817] [WARN ] [Retry] 重试 7/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":7,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:08.838] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:08.844] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:12.441] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.60s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:12.447] [WARN ] [Retry] 重试 8/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":8,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:12.469] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:12.474] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:15.785] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.31s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:15.791] [WARN ] [Retry] 重试 9/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":9,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:15.812] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:15.818] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:18.997] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.18s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:19.004] [WARN ] [Retry] 重试 10/10: fullstack_dev | {"phase":"fullstack_dev","retryCount":10,"maxRetries":10,"reason":"最后一搏: 验收未通过"}
+[2026-05-31 18:09:19.021] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codex","role":"fullstack"}
+[2026-05-31 18:09:19.026] [DEBUG] [Executor] 调用执行器: codex | {"executor":"codex","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:09:22.443] [ERROR] [Executor] 执行器结果: 失败 | {"executor":"codex","success":false,"outputLength":0,"duration":"3.42s","error":"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:27 AM."}
+[2026-05-31 18:09:22.456] [INFO ] [Phase] 阶段开始: fullstack_dev | {"phase":"fullstack_dev","executor":"codebuddy","role":"fullstack"}
+[2026-05-31 18:09:22.461] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:17:23.085] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":719,"duration":"480.62s"}
+[2026-05-31 18:17:23.100] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:23:00.175] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":2555,"duration":"337.07s"}
+[2026-05-31 18:23:00.194] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:28:47.903] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":1307,"duration":"347.71s"}
+[2026-05-31 18:28:47.916] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:34:22.222] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":2888,"duration":"334.31s"}
+[2026-05-31 18:34:22.236] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:39:09.008] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":878,"duration":"286.77s"}
+[2026-05-31 18:39:09.022] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:46:14.452] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":23,"duration":"425.43s"}
+[2026-05-31 18:46:14.468] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 18:55:26.260] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":507,"duration":"551.79s"}
+[2026-05-31 18:55:26.277] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
+[2026-05-31 19:06:55.084] [DEBUG] [Executor] 执行器结果: 成功 | {"executor":"codebuddy","success":true,"outputLength":1066,"duration":"688.81s"}
+[2026-05-31 19:06:55.100] [DEBUG] [Executor] 调用执行器: codebuddy | {"executor":"codebuddy","phase":"fullstack_dev","contentLength":1153}
