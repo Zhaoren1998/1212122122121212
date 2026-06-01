@@ -1,0 +1,47 @@
+# 执行器工作目录（AI CLI 的本地配置/日志/缓存，不应提交）
+.augment/
+.claude/
+.codebuddy/
+.codex/
+.cursor/
+.gemini/
+.kilocode/
+.kiro/
+.opencode/
+.qoder/
+.qwen/
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+__pycache__/
+*.pyc
+.venv/
+venv/
+target/
+
+# 日志与缓存
+*.log
+logs/
+.cache/
+tmp/
+temp/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 敏感
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
